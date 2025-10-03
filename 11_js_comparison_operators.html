@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        var a =10;
+        var b =10;
+        var c =6;
+        var d = "10";
+
+    console.log(a==b); //true (value)
+    console.log(a==c); //false (value)
+    console.log(a==d); //true (value)
+
+
+     /*String strict equality comparison*/
+    console.log(a===d); //false (value + type)  
+    console.log(a===b); //true (value + type)
+
+
+   /*String inequality comparison*/
+    console.log(a!==b); //false (value + type)
+    console.log(a!==c); //true (value + type)
+    console.log(a!==d); //true (value + type)
+
+
+    /*Greater than comparison*/
+    console.log(a>b); //false
+    console.log(a>c); //true    
+    console.log(c>b); //false
+    console.log(c<a); //true
+    console.log(c<=a); //true
+    console.log(c>=a); //false
+    console.log(a<=b); //true
+    console.log(a>=b); //true
+    console.log(a>=d); //true
+    console.log(a<=d); //true
+    console.log(a<d); //false
+    console.log(a>d); //false
+    console.log(c<d); //true
+    console.log(c>d); //false
+    console.log(c<=d); //true
+    console.log(c>=d); //false
+    </script>
+</body>
+</html>
