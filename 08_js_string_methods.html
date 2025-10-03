@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // let x ="Hello World!";
+        // let result = x.charAt(6);
+        // console.log(result);
+
+        /*let result = x.charCodeAt(6);
+        console.log(result);*/
+
+
+        /**concat()-----------*/
+
+        // let a = "Hello";
+        // let b = "Hii";
+        // let c = "wow";
+
+        // let result = a.concat(b,c,"welcome");
+        // console.log(result);
+
+        /**endsWith()----------*/
+        // let url1 ="www.ijse.lk";
+        // let url2 ="www.wikipidia.com";
+
+        // result = url1.endsWith(".lk"); // true
+        // result = url1.endsWith(".com"); // false
+        // result = url2.endsWith(".com"); // true
+        //  console.log(result);
+
+        //  let fruits = "mango ,bananaapple , orange";
+        // // result =fruits.includes("orange");
+        // result =fruits.includes("mango");
+         //result =fruits.includes("pineapple");
+        //  result =fruits.includes("ple , or");
+        //  console.log(result);
+
+
+
+         /**indexof()-----------*/
+         x ="Hello, world!";
+        //  result=x.indexOf("world");//7
+        //  result=x.indexOf("wow");//-1
+         
+        //  console.log(result);
+
+
+     /** lastIndexOf() ========================== */
+  result = x.lastIndexOf("World!"); // 15
+  result = x.lastIndexOf("wow!"); // -1
+  // console.log(result);
+
+  /** match() ========================== */
+  let data = "Hello! Welcome to IJSE";
+  // result = data.match(/IJSE/g); // ["IJSE"]
+  data = "Hello! Welcome to IJSE, IJSE";
+  // result = data.match(/IJSE/g); // ["IJSE", "IJSE"]
+  result = data.match(/OXFORD/g); // null
+  console.log(result);
+
+  /** replace() ========================== */
+  x = "Hello World!";
+  result = x.replace("World!", "IJSE!");
+
+  // console.log("X: ", x); // Hello World!
+  // console.log("Result: ", result); // Hello IJSE!
+
+  x = "Hello World! World!";
+  result = x.replace("World!", "IJSE!");
+  //console.log("Result: ", result); // Hello IJSE! World!
+
+  /** replaceAll() ========================== */
+
+  result = x.replaceAll("World!", "IJSE!");
+  //console.log("Result: ", result); // Hello IJSE! IJSE!
+
+  /** search() ========================== */
+  x = "Hello World!";
+  result = x.search("World"); // 6
+  result = x.search("wow"); // -1
+
+  /*
+  if(result==-1) {
+    console.log("Not Found")
+  }
+  */
+
+  // console.log(result);
+
+  /** slice() ========================== */
+  x = "Hello World!";
+  result = x.slice(2, 7); // llo W
+  // console.log(result);
+
+  /** split() ========================== */
+  fruits = "mango,banana,apple,orange";
+  result = fruits.split(",");
+  fruits = "HixxHelloxxWOWxxIJSE";
+  result = fruits.split("xx");
+  result = fruits.split("o");
+  //console.log(result);
+
+  /** substring() ========================== */
+  x = "Hello World!";
+  result = x.substring(2, 7); // llo W
+  // console.log(result);
+
+  /** startWith() ========================== */
+  x = "Hello World!";
+  result = x.startsWith("Hel");// true
+  result = x.startsWith("AHel");// false
+  // console.log(result);
+
+  /** toLowerCase() ========================== */
+  x = "Hello Welcome To Sri Lanka!";
+  result = x.toLowerCase(); // hello welcome to sri lanka!
+  // console.log(result);
+
+  /** toUpperCase() ========================== */
+  result = x.toUpperCase(); // HELLO WELCOME TO SRI LANKA!
+  // console.log(result);
+
+  /** trim() ========================== */
+  x = " ABCD   ";
+  console.log(x);
+  result = x.trim();
+  console.log(result);
+
+  /** length ========================== */
+  x = "ABCDEF";
+  console.log(x.length); // 6
+
+    </script>
+</body>
+</html>
