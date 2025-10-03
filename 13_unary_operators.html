@@ -21,6 +21,33 @@
         var c = 5;
         console.log(-c); //-5 (unary minus negates the number)
 
+        var x = 4;
+        // ++x;
+        // console.log(x); //5 (pre-increment)
+
+        // --x;
+        // console.log(x); //3 (pre-decrement)      
+        
+         /* var sum = 5 + ++x;
+        console.log("sum: ", sum); // 10
+        console.log("x: ", x); // 5
+        */
+
+        /*
+        var sum = 5 + x++;
+        console.log("sum: ", sum); // 9
+        console.log("x: ", x); // 5
+        */
+
+        /*
+        var sum = 5 + --x;
+        console.log("sum: ", sum); // 8
+        console.log("x: ", x); // 3
+        */
+
+        var sum = 5 + x--;
+        console.log("sum: ", sum); // 9
+        console.log("x: ", x); // 3
     </script>
 </body>
 </html>
