@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Graphic Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #4a4a4a 100%);
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 50%, #3a3a3a 100%);
+            padding: 80px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23ffffff" opacity="0.02" width="100" height="100"/></svg>');
+            pointer-events: none;
+        }
+
+        .updated-tag {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-title {
+            font-size: 120px;
+            font-weight: 900;
+            letter-spacing: -5px;
+            line-height: 0.9;
+            color: #e0e0e0;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .year-badge {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            top: 80px;
+            right: 40px;
+        }
+
+        .subtitle {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Info Section */
+        .info-section {
+            background: #1a1a1a;
+            padding: 30px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .info-left h3 {
+            color: #ff6b35;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .info-left p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .info-right {
+            text-align: right;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Main Content */
+        .content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            padding: 60px 40px;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .profile-image {
+            width: 100%;
+            border-radius: 15px;
+            background: #f0f0f0;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+
+        .section-box {
+            background: #0f0f0f;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .assignment-info, .software-item {
+            margin-bottom: 15px;
+        }
+
+        .assignment-info p, .software-item p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .assignment-info strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .software-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .software-icon {
+            width: 40px;
+            height: 40px;
+            background: #2a2a2a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .software-text h4 {
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .software-text p {
+            font-size: 11px;
+            color: #666;
+        }
+
+        /* Right Column */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .hello-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .hello-title {
+            font-size: 90px;
+            font-weight: 900;
+            letter-spacing: -3px;
+            color: #e0e0e0;
+            text-transform: uppercase;
+            line-height: 0.9;
+        }
+
+        .hello-exclamation {
+            color: #ff6b35;
+        }
+
+        .intro-text {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+            margin-top: 20px;
+        }
+
+        .intro-text strong {
+            color: #fff;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #ff8555;
+        }
+
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: #0f0f0f;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 2px solid #333;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #ff6b35;
+            border-radius: 50%;
+            position: absolute;
+            left: -5px;
+            top: 5px;
+        }
+
+        .timeline-year {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .timeline-subtitle {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .skills-list, .cert-list {
+            list-style: none;
+        }
+
+        .skills-list li, .cert-list li {
+            padding: 8px 0;
+            color: #ccc;
+            font-size: 14px;
+            border-bottom: 1px solid #222;
+        }
+
+        .skills-list li:last-child, .cert-list li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 1024px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-title {
+                font-size: 80px;
+            }
+
+            .hello-title {
+                font-size: 60px;
+            }
+
+            .bottom-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-title {
+                font-size: 60px;
+            }
+
+            .year-badge {
+                position: static;
+                margin-top: 20px;
+            }
+
+            .hello-section {
+                flex-direction: column;
+            }
+
+            .software-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="updated-tag">Updated</div>
+            <div class="portfolio-title">PORTFOLIO</div>
+            <span class="year-badge">2024</span>
+            <div class="subtitle">
+                <span>FRONTEND DEVELOPER</span>
+                <span>MANUJA RAVISHKA</span>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <div class="info-left">
+                <h3>Manuja Ravishka</h3>
+                <p>Frontend Developer</p>
+                <p style="margin-top: 15px;">This portfolio contains some of my work<br>and assignments.</p>
+            </div>
+            <div class="info-right">
+                <p>Text in set in this portfolio:</p>
+                <p>Thunder by Rajesh Rajput</p>
+                <p>Urbanist by Corey Hu</p>
+                <p style="margin-top: 10px;">Copyright © 2024</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='373'%3E%3Crect fill='%23cccccc' width='280' height='373'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666' font-size='20' font-family='Arial'%3EProfile Photo%3C/text%3E%3C/svg%3E" alt="Profile" class="profile-image">
+                
+                <div class="section-box">
+                    <h2 class="section-title">Assignment</h2>
+                    <div class="assignment-info">
+                        <strong>2020 - 2024</strong>
+                        <p><strong>Telkom University, Bandung</strong></p>
+                        <p>Bachelor of Visual Communication Design</p>
+                    </div>
+                </div>
+
+                <div class="section-box">
+                    <h2 class="section-title">Software Skills</h2>
+                    <div class="software-grid">
+                        <div class="software-item">
+                            <div class="software-icon">Ps</div>
+                            <div class="software-text">
+                                <h4>Photoshop</h4>
+                                <p>Image editing photo</p>
+                            </div>
+                        </div>
+                        <div class="software-item">
+                            <div class="software-icon">Pr</div>
+                            <div class="software-text">
+                                <h4>Premiere Pro</h4>
+                                <p>Simple video editing</p>
+                            </div>
+                        </div>
+                        <div class="software-item">
+                            <div class="software-icon">Ai</div>
+                            <div class="software-text">
+                                <h4>Illustrator</h4>
+                                <p>Logo vector, layouting</p>
+                            </div>
+                        </div>
+                        <div class="software-item">
+                            <div class="software-icon">Ae</div>
+                            <div class="software-text">
+                                <h4>After Effects</h4>
+                                <p>Simple motion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <div class="hello-section">
+                    <div style="flex: 1;">
+                        <div class="hello-title">HELLO<span class="hello-exclamation">!</span></div>
+                        <div class="intro-text">
+                            My Name is <strong>Zalfa Aethra Jauza</strong> (S.Ds). But people called me <strong>Ical</strong>. I am a Graphic Designer based in Indonesia. I have been working as a freelance graphic designer for about 5 years. I love art and visual things. I usually work on projects like branding, logo design, social media design, poster design, and layouting. I am passionate about pushing the boundaries of design and exploring new skills.
+                        </div>
+                        <div class="contact-buttons">
+                            <a href="mailto:aethra.jauza@gmail.com" class="contact-btn">aethra.jauza@gmail.com</a>
+                            <a href="#" class="contact-btn">@icalzalfaa</a>
+                            <a href="#" class="contact-btn">behance.net/icalzalfa</a>
+                            <a href="tel:+6285960355213" class="contact-btn">(+62) 859-6035-5213</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-grid">
+                    <div class="info-card">
+                        <h3>Project</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2019 - present</div>
+                            <div class="timeline-title">Freelance</div>
+                            <div class="timeline-subtitle">Graphic Designer</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2023</div>
+                            <div class="timeline-title">Pio Digital Agency</div>
+                            <div class="timeline-subtitle">Graphic Designer</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024</div>
+                            <div class="timeline-title">Senyawa+</div>
+                            <div class="timeline-subtitle">Graphic Designer</div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Skills</h3>
+                        <ul class="skills-list">
+                            <li>- Attention to detail</li>
+                            <li>- Love learning</li>
+                            <li>- Time Management</li>
+                            <li>- Creative</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Certificate</h3>
+                        <ul class="cert-list">
+                            <li>Indonesian (native)</li>
+                            <li>English (intermediate)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
